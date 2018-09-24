@@ -10,9 +10,13 @@ namespace KotrakTest
         public static void Initialize()
         {
             if (UseMockDataStore)
+            {
                 ServiceLocator.Instance.Register<IDataStore<Person>, MockDataStore>();
+            }
             else
+            {
                 ServiceLocator.Instance.Register<IDataStore<Person>, CloudDataStore>();
+            }
         }
     }
 }

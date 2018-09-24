@@ -1,10 +1,13 @@
-﻿namespace KotrakTest.Models
+﻿using Newtonsoft.Json;
+
+namespace KotrakTest.Models
 {
     public class Contractor : Person
     {
         public string CompanyName { get; set; }
 
-        public Contractor(string id, string name, string surname, string companyName) : base (id, name, surname)
+        [JsonConstructor]
+        public Contractor(string id, string name, string surname, string companyName) : base(id, name, surname)
         {
             CompanyName = companyName;
         }

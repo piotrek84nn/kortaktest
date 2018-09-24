@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.OS;
 using Android.Widget;
+using KotrakTest.Models;
 
 namespace KotrakTest.Droid
 {
@@ -18,7 +19,7 @@ namespace KotrakTest.Droid
 
             var data = Intent.GetStringExtra("data");
 
-            var item = Newtonsoft.Json.JsonConvert.DeserializeObject<Person>(data);
+            var item = Newtonsoft.Json.JsonConvert.DeserializeObject<Contractor>(data);
             viewModel = new ItemDetailViewModel(item);
 
             FindViewById<TextView>(Resource.Id.description).Text = item.Surname;
